@@ -1,0 +1,15 @@
+'plugins':
+  - 'removeDimensions': false
+  - 'removeXMLNS': false
+  - 'sortAttrs': true
+  - 'removeAttrs':
+      attrs:
+        - 'stroke'
+        - 'fill'
+        - 'path:stroke-width'
+  - 'addAttributesToSVGElement':
+      attributes:
+        - 'fill': 'currentColor'
+        - 'stroke-width': '1.5'
+        - 'stroke': 'none'
+        - 'aria-hidden': 'true'

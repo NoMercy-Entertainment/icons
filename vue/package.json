@@ -1,0 +1,62 @@
+{
+  "name": "@nomercy/icons-vue",
+  "license": "MIT",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+  "homepage": "https://github.com/NoMercy-Entertainment/icons#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NoMercy-Entertainment/icons.git"
+  },
+  "files": [
+    "mui",
+    "index.esm.js",
+    "index.js"
+  ],
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "import": "./index.esm.js",
+      "require": "./index.js"
+    },
+    "./package.json": {
+      "default": "./package.json"
+    },
+    "./mui": {
+      "types": "./mui/index.d.ts",
+      "import": "./mui/esm/index.js",
+      "require": "./mui/index.js"
+    },
+    "./mui/index": {
+      "default": "./mui/index.js"
+    },
+    "./mui/index.js": {
+      "default": "./mui/index.js"
+    },
+    "./mui/*": {
+      "types": "./mui/*.d.ts",
+      "import": "./mui/esm/*.js",
+      "require": "./mui/*.js"
+    },
+    "./mui/*.js": {
+      "types": "./mui/*.d.ts",
+      "import": "./mui/esm/*.js",
+      "require": "./mui/*.js"
+    },
+    "./mui/esm/*": {
+      "types": "./mui/*.d.ts",
+      "import": "./mui/esm/*.js"
+    },
+    "./mui/esm/*.js": {
+      "types": "./mui/*.d.ts",
+      "import": "./mui/esm/*.js"
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "vue": ">= 3"
+  }
+}
