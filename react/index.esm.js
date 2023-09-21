@@ -9,7 +9,7 @@ export default new Proxy(
       }
 
       throw new Error(
-        `Importing from \`@muiicons/react\` directly is not supported. Please import from either \`@muiicons/react/24/filled\`, or \`@muiicons/react/24/outlined\` instead.`
+        `Importing from \`@nomercy/mui-icons-react\` directly is not supported. Please import from either \`@nomercy/mui-icons-react/24/filled\`, or \`@nomercy/mui-icons-react/24/outlined\` instead.`
       )
     },
   }
