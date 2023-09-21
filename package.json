@@ -6,6 +6,9 @@
     "mui/",
     "README.md"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "prepublishOnly": "npm run build",
     "lint": "node ./scripts/verify-names.js",
