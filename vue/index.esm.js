@@ -9,7 +9,7 @@ export default new Proxy(
       }
 
       throw new Error(
-        `Importing from \`@nomercy/icons/vue\` directly is not supported. Please import from either \`@nomercy/icons/vue/24/filled\`, or \`@nomercy/icons/vue/24/outlined\` instead.`
+        `Importing from \`@muiicons/vue\` directly is not supported. Please import from either \`@muiicons/vue/24/filled\`, or \`@muiicons/vue/24/outlined\` instead.`
       )
     },
   }
