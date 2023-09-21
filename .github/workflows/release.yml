@@ -44,10 +44,10 @@ jobs:
         run: |
           echo "RELEASE_CHANNEL=$(npm run release-channel --silent)" >> $GITHUB_ENV
 
-      - name: Publish `@nomercy/mui-icons`
-        run: npm publish --tag ${{ env.RELEASE_CHANNEL }}
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      # - name: Publish `@nomercy/mui-icons`
+      #   run: npm publish --tag ${{ env.RELEASE_CHANNEL }}
+      #   env:
+      #     NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Publish `@nomercy/mui-icons-react`
         run: npm publish ./react --tag ${{ env.RELEASE_CHANNEL }}
