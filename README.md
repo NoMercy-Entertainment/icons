@@ -44,16 +44,16 @@ Both icon styles are preconfigured to be stylable by setting the `color` CSS pro
 
 ## React
 
-First, install `@nomercy/mui-icons-react` from npm:
+First, install `@nomercyicons/react` from npm:
 
 ```sh
-npm install @nomercy/mui-icons-react
+npm install @nomercyicons/react
 ```
 
 Now each icon can be imported individually as a React component:
 
 ```js
-import { BeakerIcon } from '@nomercy/mui-icons-react/24/filled'
+import { BeakerIcon } from '@nomercyicons/react/24/filled'
 
 function MyComponent() {
   return (
@@ -65,20 +65,20 @@ function MyComponent() {
 }
 ```
 
-The 24x24 outlined icons can be imported from `@nomercy/mui-icons-react/24/outlined`, the 24x24 filled icons can be imported from `@nomercy/mui-icons-react/24/filled`.
+The 24x24 outlined icons can be imported from `@nomercyicons/react/24/outlined`, the 24x24 filled icons can be imported from `@nomercyicons/react/24/filled`.
 
 Icons use an upper camel case naming convention and are always suffixed with the word `Icon`.
 
-[Browse the full list of icon names on UNPKG &rarr;](https://unpkg.com/browse/@nomercy/mui-icons-react/24/outlined/)
+[Browse the full list of icon names on UNPKG &rarr;](https://unpkg.com/browse/@nomercyicons/react/24/outlined/)
 
 ## Vue
 
 _Note that this library currently only supports Vue 3._
 
-First, install `@nomercy/mui-icons-vue` from npm:
+First, install `@nomercyicons/vue` from npm:
 
 ```sh
-npm install @nomercy/mui-icons-vue
+npm install @nomercyicons/vue
 ```
 
 Now each icon can be imported individually as a Vue component:
@@ -92,15 +92,15 @@ Now each icon can be imported individually as a Vue component:
 </template>
 
 <script setup>
-import { BeakerIcon } from '@nomercy/mui-icons-vue/24/filled'
+import { BeakerIcon } from '@nomercyicons/vue/24/filled'
 </script>
 ```
 
-The 24x24 outlined icons can be imported from `@nomercy/mui-icons-vue/24/outlined`, the 24x24 filled icons can be imported from `@nomercy/mui-icons-vue/24/filled`.
+The 24x24 outlined icons can be imported from `@nomercyicons/vue/24/outlined`, the 24x24 filled icons can be imported from `@nomercyicons/vue/24/filled`.
 
 Icons use an upper camel case naming convention and are always suffixed with the word `Icon`.
 
-[Browse the full list of icon names on UNPKG &rarr;](https://unpkg.com/browse/@nomercy/mui-icons-vue/24/outlined/)
+[Browse the full list of icon names on UNPKG &rarr;](https://unpkg.com/browse/@nomercyicons/vue/24/outlined/)
 
 ## Contributing
 
