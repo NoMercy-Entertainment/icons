@@ -1,5 +1,5 @@
 'plugins':
-  - 'removeDimensions': false
+  - 'removeDimensions': true
   - 'removeXMLNS': false
   - 'sortAttrs': true
   - 'removeAttrs':

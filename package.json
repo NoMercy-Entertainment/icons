@@ -13,7 +13,7 @@
     "build": "npm run build-mui && npm run build-react && npm run build-vue",
     "build-react": "node ./scripts/build.js react",
     "build-vue": "node ./scripts/build.js vue",
-    "build-mui": "rimraf ./mui ./optimized/mui && svgo --config=svgo.24.filled.yaml -f ./src/mui -o ./optimized/mui --pretty --indent=2 && mkdir -p ./24 && cp -R ./optimized/mui ./mui",
+    "build-mui": "rimraf ./mui ./optimized/mui && svgo --config=svgo.mui.yaml -f ./src/mui -o ./optimized/mui --pretty --indent=2 && mkdir -p ./mui && cp -R ./optimized/mui ./mui",
     "release-channel": "node ./scripts/release-channel.js",
     "release-notes": "node ./scripts/release-notes.js"
   },
