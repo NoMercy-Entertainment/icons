@@ -3,12 +3,7 @@ const path = require('path')
 
 const srcPaths = {
   mui: path.resolve(__dirname, '../src/mui/'),
-  // filled: path.resolve(__dirname, '../src/24/filled/'),
-  // outlined: path.resolve(__dirname, '../src/24/outlined/'),
-  // rounded: path.resolve(__dirname, '../src/24/rounded/'),
-  // sharp: path.resolve(__dirname, '../src/24/sharp/'),
-  // solid: path.resolve(__dirname, '../src/24/solid/'),
-  // tone: path.resolve(__dirname, '../src/24/tone/'),
+  brands: path.resolve(__dirname, '../src/brands/'),
 }
 
 async function main() {

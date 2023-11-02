@@ -1,19 +1,21 @@
 {
   "name": "nomercyicons",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "license": "MIT",
   "files": [
     "mui/",
+    "brands/",
     "README.md"
   ],
   "scripts": {
     "prepublishOnly": "npm run build",
     "lint": "node ./scripts/verify-names.js",
-    "prebuild": "rimraf ./{mui} ./{vue,react}/{mui} ./optimized/{mui}",
-    "build": "npm run build-mui && npm run build-react && npm run build-vue",
+    "prebuild": "rimraf ./{mui} ./{vue,react}/{mui} ./optimized/{mui} ./{brands} ./{vue,react}/{brands} ./optimized/{brands}",
+    "build": "npm run build-mui && npm run build-brands && npm run build-react && npm run build-vue",
     "build-react": "node ./scripts/build.js react",
     "build-vue": "node ./scripts/build.js vue",
     "build-mui": "rimraf ./mui ./optimized/mui && svgo --config=svgo.mui.yaml -f ./src/mui -o ./optimized/mui --pretty --indent=2 && mkdir -p ./mui && cp -R ./optimized/mui ./mui",
+    "build-brands": "rimraf ./brands ./optimized/brands && svgo --config=svgo.brands.yaml -f ./src/brands -o ./optimized/brands --pretty --indent=2 && mkdir -p ./brands && cp -R ./optimized/brands ./brands",
     "release-channel": "node ./scripts/release-channel.js",
     "release-notes": "node ./scripts/release-notes.js"
   },

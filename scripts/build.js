@@ -80,8 +80,8 @@ async function ensureWriteJson(file, json) {
   await ensureWrite(file, JSON.stringify(json, null, 2) + '\n')
 }
 
-async function buildIcons(package, style, format) {
-  let outDir = `./${package}/${style}`
+async function buildIcons(type, style, format) {
+  let outDir = `./${type}/${style}`
   if (format === 'esm') {
     outDir += '/esm'
   }
@@ -90,9 +90,9 @@ async function buildIcons(package, style, format) {
 
   await Promise.all(
     icons.flatMap(async ({ componentName, svg }) => {
-      let content = await transform[package](svg, componentName, format)
+      let content = await transform[type](svg, componentName, format)
       let types =
-        package === 'react'
+        type === 'react'
           ? `import * as React from 'react';\ndeclare const ${componentName.replace(/Icon$/gu, '')}: React.ForwardRefExoticComponent<React.PropsWithoutRef<React.SVGProps<SVGSVGElement>> & { title?: string, titleId?: string } & React.RefAttributes<SVGSVGElement>>;\nexport default ${componentName.replace(/Icon$/gu, '')};\n`
           : `import type { FunctionalComponent, HTMLAttributes, VNodeProps } from 'vue';\ndeclare const ${componentName.replace(/Icon$/gu, '')}: FunctionalComponent<HTMLAttributes & VNodeProps>;\nexport default ${componentName.replace(/Icon$/gu, '')};\n`
 
@@ -128,6 +128,10 @@ async function buildExports(styles) {
   pkg['./mui/index'] = { default: './mui/index.js' }
   pkg['./mui/index.js'] = { default: './mui/index.js' }
 
+  pkg['./brands'] = { default: './brands/index.js' }
+  pkg['./brands/index'] = { default: './brands/index.js' }
+  pkg['./brands/index.js'] = { default: './brands/index.js' }
+
   // Explicit exports for each style:
   for (let style of styles) {
     pkg[`./${style}`] = {
@@ -161,38 +165,44 @@ async function buildExports(styles) {
   return pkg
 }
 
-async function main(package) {
+async function main(type) {
   const cjsPackageJson = { module: './esm/index.js', sideEffects: false }
   const esmPackageJson = { type: 'module', sideEffects: false }
 
-  console.log(`Building ${package} package...`)
+  console.log(`Building ${type} package...`)
 
   await Promise.all([
-    rimraf(`./${package}/mui/*`),
+    rimraf(`./${type}/mui/*`),
+    rimraf(`./${type}/brands/*`),
   ])
 
   await Promise.all([
-    buildIcons(package, 'mui', 'cjs'),
-    buildIcons(package, 'mui', 'esm'),
-    ensureWriteJson(`./${package}/mui/esm/package.json`, esmPackageJson),
-    ensureWriteJson(`./${package}/mui/package.json`, cjsPackageJson),
+    buildIcons(type, 'mui', 'cjs'),
+    buildIcons(type, 'mui', 'esm'),
+    ensureWriteJson(`./${type}/mui/esm/package.json`, esmPackageJson),
+    ensureWriteJson(`./${type}/mui/package.json`, cjsPackageJson),
+    buildIcons(type, 'brands', 'cjs'),
+    buildIcons(type, 'brands', 'esm'),
+    ensureWriteJson(`./${type}/brands/esm/package.json`, esmPackageJson),
+    ensureWriteJson(`./${type}/brands/package.json`, cjsPackageJson),
   ])
 
-  let packageJson = JSON.parse(await fs.readFile(`./${package}/package.json`, 'utf8'))
+  let packageJson = JSON.parse(await fs.readFile(`./${type}/package.json`, 'utf8'))
 
   packageJson.exports = await buildExports([
     'mui',
+    'brands',
   ]);
 
-  await ensureWriteJson(`./${package}/package.json`, packageJson)
+  await ensureWriteJson(`./${type}/package.json`, packageJson)
 
-  return console.log(`Finished building ${package} package.`)
+  return console.log(`Finished building ${type} package.`)
 }
 
-let [package] = process.argv.slice(2)
+let [type] = process.argv.slice(2)
 
-if (!package) {
+if (!type) {
   throw new Error('Please specify a package')
 }
 
-main(package)
+main(type)

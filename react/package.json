@@ -1,7 +1,7 @@
 {
   "name": "@nomercyicons/react",
   "license": "MIT",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "",
   "keywords": [],
   "homepage": "https://github.com/NoMercy-Entertainment/icons#readme",
@@ -34,6 +34,17 @@
     "./mui/index.js": {
       "default": "./mui/index.js"
     },
+    "./brands": {
+      "types": "./brands/index.d.ts",
+      "import": "./brands/esm/index.js",
+      "require": "./brands/index.js"
+    },
+    "./brands/index": {
+      "default": "./brands/index.js"
+    },
+    "./brands/index.js": {
+      "default": "./brands/index.js"
+    },
     "./mui/*": {
       "types": "./mui/*.d.ts",
       "import": "./mui/esm/*.js",
@@ -51,6 +62,24 @@
     "./mui/esm/*.js": {
       "types": "./mui/*.d.ts",
       "import": "./mui/esm/*.js"
+    },
+    "./brands/*": {
+      "types": "./brands/*.d.ts",
+      "import": "./brands/esm/*.js",
+      "require": "./brands/*.js"
+    },
+    "./brands/*.js": {
+      "types": "./brands/*.d.ts",
+      "import": "./brands/esm/*.js",
+      "require": "./brands/*.js"
+    },
+    "./brands/esm/*": {
+      "types": "./brands/*.d.ts",
+      "import": "./brands/esm/*.js"
+    },
+    "./brands/esm/*.js": {
+      "types": "./brands/*.d.ts",
+      "import": "./brands/esm/*.js"
     }
   },
   "publishConfig": {

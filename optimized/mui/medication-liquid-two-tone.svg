@@ -1,14 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="currentColor" viewBox="0 0 24 24" stroke-width="1.5" stroke="none" aria-hidden="true">
   <path fill="none" d="M0 0h24v24H0z"/>
   <g opacity=".3">
-    <defs>
-      <path id="a" d="M4 8h10v11H4z" opacity=".3"/>
-    </defs>
-    <use overflow="visible" xlink:href="#a"/>
-    <clipPath id="b">
-      <use overflow="visible" xlink:href="#a"/>
-    </clipPath>
-    <path d="M4 19h10V8H4v11zm1-7h2.5V9.5h3V12H13v3h-2.5v2.5h-3V15H5v-3z" clip-path="url(#b)"/>
+    <use overflow="visible" xlink:href="#SVGID_1_"/>
+    <path d="M4 19h10V8H4v11zm1-7h2.5V9.5h3V12H13v3h-2.5v2.5h-3V15H5v-3z" clip-path="url(#SVGID_2_)"/>
   </g>
   <path d="M3 3h12v2H3zM14 6H4c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2m0 13H4V8h10v11z"/>
   <path d="M7.5 17.5h3V15H13v-3h-2.5V9.5h-3V12H5v3h2.5z"/>
