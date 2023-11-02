@@ -9,7 +9,7 @@ module.exports = new Proxy(
       }
 
       throw new Error(
-        `Importing from \`@nomercyicons/react\` directly is not supported. Please import from either \`@nomercyicons/react/24/filled\`, or \`@nomercyicons/react/24/outlined\` instead.`
+        `Importing from \`@nomercyicons/react\` directly is not supported. Please import from either \`@nomercyicons/react/brands\`, or \`@nomercyicons/react/mui\` instead.`
       )
     },
   }
